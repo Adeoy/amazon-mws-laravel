@@ -9,11 +9,11 @@ This is __NOT__ for Amazon Web Services (AWS) - Cloud Computing Services.
 
 ## Installation
 
-1. `composer require Adeoy/laravel5-amazon-mws`
+1. `composer require adeoy/laravel5-amazon-mws`
 
 2. add the service provider to the providers array in config/app.php:
 ```
-Adeoy\AmazonMws\ServiceProvider::class,
+adeoy\AmazonMws\ServiceProvider::class,
 ```
 
 There's no facades to add in config/app.php
@@ -45,7 +45,7 @@ without having to jump hurdles such as parameter URL formatting and token manage
 
 Here is an example of a function used to get all warehouse-fulfilled orders from Amazon updated in the past 24 hours:
 ```php
-use Adeoy\AmazonMws\AmazonOrderList;
+use adeoy\AmazonMws\AmazonOrderList;
 
 function getAmazonOrders() {
     $amz = new AmazonOrderList("myStore"); //store name matches the array key in the config file
@@ -61,7 +61,7 @@ function getAmazonOrders() {
 ```
 This example shows a function used to send a previously-created XML feed to Amazon to update Inventory numbers:
 ```php
-use Adeoy\AmazonMws\AmazonOrderList;
+use adeoy\AmazonMws\AmazonOrderList;
 
 function sendInventoryFeed($feed) {
     $amz = new AmazonFeed("myStore"); //store name matches the array key in the config file
@@ -73,7 +73,7 @@ function sendInventoryFeed($feed) {
 ```
 This example show a function used to get all Events of the Financial API that happened in Juanry 1st 2017:
 ```php
-use Adeoy\AmazonMws\AmazonFinancialEventList;
+use adeoy\AmazonMws\AmazonFinancialEventList;
 
 function getFinancialEventList($feed) {
     $amz = new AmazonFinancialEventList("myStore"); // Select your store in amazon-mws.php
